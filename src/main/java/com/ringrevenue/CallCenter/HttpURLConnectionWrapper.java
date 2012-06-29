@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 import java.lang.String;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 
 
@@ -76,20 +76,20 @@ public class HttpURLConnectionWrapper implements HttpRequest{
         String attr = "";
         String[] keys = (String []) attributes.keySet().toArray(new String[0]);
         Arrays.sort(keys);
-        
-	//Set keys = attributes.keySet();
-           
+                   
         for(String key : keys){
             
             //sku_list and quantity_list is comma separated
-            // Option 1: find any comma separated vals and split them
-            String[] vals = attributes.get(key).split(",+");
+            String[] vals = attributes.get(key).split(",");
             for(int i = 0; i < vals.length; i++){
-                attr += "&" + key + "=" + vals[i];
+                try{
+                    attr += "&" + key + "=" + URLEncoder.encode(vals[i], "UTF-8");
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
-            // Option 2: split at commas only when sku_list or quantity_list is found
         
-        }   
+        } 
            
        return attr.substring(1);
     }
