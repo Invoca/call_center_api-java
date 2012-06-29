@@ -10,8 +10,8 @@ public class sample {
         HashMap<String,String> hm = new HashMap<String,String>();
         hm.put("CALL_CENTER_ID", "1");
         hm.put("API_VERSION", "2010-04-22");
-        hm.put("API_USERNAME", "james@ringrevenue.com");
-        hm.put("API_PASSWORD", "firefox");
+        hm.put("API_USERNAME", "test@ringrevenue.com");
+        hm.put("API_PASSWORD", "testcalls");
         
         RingRevenue_Call_Center.config(hm);
         
