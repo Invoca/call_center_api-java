@@ -1,4 +1,4 @@
-<h1>call_center_api-php</h1>
+<h1>call_center_api-java</h1>
 
 This is a Java wrapper for the Call Center API which is used to report completed order information from the Call Center back into the RingRevenue platform. You can read more about this API on the [documentation page](http://support.ringrevenue.com/advertisers/Sales_Reporting_API). 
 
