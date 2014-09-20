@@ -1,4 +1,4 @@
-package com.ringrevenue.CallCenter;
+package com.invoca.CallCenter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,10 +10,10 @@ public class sample {
         HashMap<String,String> hm = new HashMap<String,String>();
         hm.put("CALL_CENTER_ID", "1");
         hm.put("API_VERSION", "2010-04-22");
-        hm.put("API_USERNAME", "test@ringrevenue.com");
+        hm.put("API_USERNAME", "test@invoca.com");
         hm.put("API_PASSWORD", "testcalls");
         
-        RingRevenue_Call_Center.config(hm);
+        Invoca_Call_Center.config(hm);
         
         ArrayList<HashMap<String,String>> call_data = new ArrayList<HashMap<String,String>>();
         call_data.add(new HashMap<String,String>());
@@ -46,7 +46,7 @@ public class sample {
         call_data.get(2).put("calling_phone_number", "+1 8056801218" );
 
         for(HashMap<String,String> call_info : call_data){
-        RingRevenue_Call_Center_Call call = new RingRevenue_Call_Center_Call(call_info);
+        Invoca_Call_Center_Call call = new Invoca_Call_Center_Call(call_info);
         hm = call.save();
         
         HashMap<String,String> params = call.get_attributes();

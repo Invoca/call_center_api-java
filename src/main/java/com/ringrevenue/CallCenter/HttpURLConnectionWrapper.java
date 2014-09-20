@@ -1,4 +1,4 @@
-package com.ringrevenue.CallCenter;
+package com.invoca.CallCenter;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

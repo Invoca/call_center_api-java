@@ -1,12 +1,12 @@
-package com.ringrevenue.CallCenter;
+package com.invoca.CallCenter;
 
 import java.util.HashMap;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class RingRevenue_Call_CenterTest {
+public class Invoca_Call_CenterTest {
     
-    public RingRevenue_Call_CenterTest() {
+    public Invoca_Call_CenterTest() {
     }
 
 
@@ -15,12 +15,12 @@ public class RingRevenue_Call_CenterTest {
         HashMap<String,String> expected = new HashMap<String,String>();
         expected.put("CALL_CENTER_ID", "1");
         expected.put("API_VERSION", "2012-01-10");
-        expected.put("API_USERNAME", "test@ringrevenue.com");
-        expected.put("API_PASSWORD", "ringrevenue");
+        expected.put("API_USERNAME", "test@invoca.com");
+        expected.put("API_PASSWORD", "invoca");
         
-        RingRevenue_Call_Center.config(expected);
+        Invoca_Call_Center.config(expected);
         
-        assertEquals(expected, RingRevenue_Call_Center.get_config());
+        assertEquals(expected, Invoca_Call_Center.get_config());
     }
 
 }

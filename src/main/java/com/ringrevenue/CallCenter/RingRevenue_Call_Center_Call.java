@@ -1,15 +1,15 @@
-package com.ringrevenue.CallCenter;
+package com.invoca.CallCenter;
 
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 import java.util.*;
 
-public class RingRevenue_Call_Center_Call {
+public class Invoca_Call_Center_Call {
     private HashMap<String,String> call_attributes;
     private int api_num;
     public HttpRequest connection;
 
-    public RingRevenue_Call_Center_Call( HashMap<String,String> hm ) {
+    public Invoca_Call_Center_Call( HashMap<String,String> hm ) {
         call_attributes = new HashMap<String,String>();
         attributes(hm);
         api_num = (int) (Math.random() + 0.5);
@@ -43,7 +43,7 @@ public class RingRevenue_Call_Center_Call {
             
             Authenticator.setDefault (new Authenticator() {
     protected PasswordAuthentication getPasswordAuthentication() {
-        return new PasswordAuthentication (RingRevenue_Call_Center.API_USERNAME, RingRevenue_Call_Center.API_PASSWORD.toCharArray());
+        return new PasswordAuthentication (Invoca_Call_Center.API_USERNAME, Invoca_Call_Center.API_PASSWORD.toCharArray());
     }
 });
             
@@ -89,7 +89,7 @@ public class RingRevenue_Call_Center_Call {
     }
 
     public String generate_api_url(){
-        return "https://api" + api_num + ".ringrevenue.com/api/" + RingRevenue_Call_Center.API_VERSION + "/calls/" + RingRevenue_Call_Center.CALL_CENTER_ID + ".xml";
+        return "https://api" + api_num + ".invoca.com/api/" + Invoca_Call_Center.API_VERSION + "/calls/" + Invoca_Call_Center.CALL_CENTER_ID + ".xml";
 
     } 
     

@@ -1,4 +1,4 @@
-package com.ringrevenue.CallCenter;
+package com.invoca.CallCenter;
 
 import java.util.HashMap;
 

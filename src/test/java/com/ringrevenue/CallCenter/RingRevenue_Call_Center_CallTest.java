@@ -1,4 +1,4 @@
-package com.ringrevenue.CallCenter;
+package com.invoca.CallCenter;
 
 import java.util.HashMap;
 import org.junit.AfterClass;
@@ -7,10 +7,10 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 
 
-public class RingRevenue_Call_Center_CallTest {
+public class Invoca_Call_Center_CallTest {
     
     
-    public RingRevenue_Call_Center_CallTest() {
+    public Invoca_Call_Center_CallTest() {
     }
 
     @BeforeClass
@@ -18,10 +18,10 @@ public class RingRevenue_Call_Center_CallTest {
         HashMap<String,String> hm = new HashMap<String,String>();
         hm.put("CALL_CENTER_ID", "1");
         hm.put("API_VERSION", "2012-01-10");
-        hm.put("API_USERNAME", "test@ringrevenue.com");
-        hm.put("API_PASSWORD", "ringrevenue");
+        hm.put("API_USERNAME", "test@invoca.com");
+        hm.put("API_PASSWORD", "invoca");
         
-        RingRevenue_Call_Center.config(hm);
+        Invoca_Call_Center.config(hm);
         
     }
 
@@ -31,7 +31,7 @@ public class RingRevenue_Call_Center_CallTest {
 
     @Test
     public void testAttributes() {
-        RingRevenue_Call_Center_Call call = new RingRevenue_Call_Center_Call( new HashMap<String,String>() );
+        Invoca_Call_Center_Call call = new Invoca_Call_Center_Call( new HashMap<String,String>() );
         HashMap<String,String> expected = new HashMap<String,String>();
         expected.put("start_time_t", "13401824" );
         expected.put("duration_in_seconds", "200" );
@@ -45,7 +45,7 @@ public class RingRevenue_Call_Center_CallTest {
     
     @Test
     public void testSaveShouldRunWithNoErrorOn200s() {
-        RingRevenue_Call_Center_Call call = new RingRevenue_Call_Center_Call( new HashMap<String,String>() );
+        Invoca_Call_Center_Call call = new Invoca_Call_Center_Call( new HashMap<String,String>() );
         try{
             call.connection =  new HttpURLConnectionMock();
         } catch (Exception e){
@@ -72,7 +72,7 @@ public class RingRevenue_Call_Center_CallTest {
     
     @Test
     public void testSaveShouldRunWithErrorOnNon200s() {
-        RingRevenue_Call_Center_Call call = new RingRevenue_Call_Center_Call( new HashMap<String,String>() );
+        Invoca_Call_Center_Call call = new Invoca_Call_Center_Call( new HashMap<String,String>() );
         try{
             call.connection =  new HttpURLConnectionMock();
         } catch (Exception e){
@@ -99,14 +99,14 @@ public class RingRevenue_Call_Center_CallTest {
 
     @Test
     public void testGenerateApiUrl(){
-        RingRevenue_Call_Center_Call call = new RingRevenue_Call_Center_Call( new HashMap<String,String>() );
-        String expected_url = "https://api" + call.get_api_num() + ".ringrevenue.com/api/" + RingRevenue_Call_Center.API_VERSION + "/calls/" + RingRevenue_Call_Center.CALL_CENTER_ID + ".xml";
+        Invoca_Call_Center_Call call = new Invoca_Call_Center_Call( new HashMap<String,String>() );
+        String expected_url = "https://api" + call.get_api_num() + ".invoca.com/api/" + Invoca_Call_Center.API_VERSION + "/calls/" + Invoca_Call_Center.CALL_CENTER_ID + ".xml";
         assertEquals(expected_url, call.generate_api_url());
     }
     
     @Test
     public void testGenerateUrlEncode(){
-        RingRevenue_Call_Center_Call call = new RingRevenue_Call_Center_Call( new HashMap<String,String>() );
+        Invoca_Call_Center_Call call = new Invoca_Call_Center_Call( new HashMap<String,String>() );
         String expected_encode = "duration_in_seconds=200&opt_in_SMS=1&reason_code=S&sku_list[]=one&sku_list[]=two&start_time_t=13401824";
         
         HashMap<String,String> expected = new HashMap<String,String>();

@@ -1,8 +1,8 @@
-package com.ringrevenue.CallCenter;
+package com.invoca.CallCenter;
 
 import java.util.*;
 
-abstract class RingRevenue_Call_Center {
+abstract class Invoca_Call_Center {
     public static String CALL_CENTER_ID;
     public static String API_VERSION;
     public static String API_USERNAME;
